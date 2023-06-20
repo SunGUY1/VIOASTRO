@@ -1,0 +1,280 @@
+*,
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  border:  0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+ul,
+ol,
+li{
+  list-style: none;
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body{
+  height: 100%;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 14px;
+font-family: Montserrat;
+
+}
+
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+._container{
+    max-width: 1170px;
+    margin: 0px auto;
+    padding: 0 20px;
+    box-sizing: content-box;
+  }
+  ._containerH{
+    max-width: 970px;
+    margin: 0px auto;
+    padding: 0 20px;
+    box-sizing: content-box;
+  }
+  /* ==========================меню============================== */
+  #burger, [for=burger]{
+    display: none;
+}
+@media screen and (min-width: 740px){
+  .header{
+    position: fixed;
+    top: 0;
+    width: 100%; 
+  padding: 20px 0;
+  background-color: #0c0915cb;
+  transition: 2s ease;
+}
+.header:hover{
+  background-color: #0c09151c;
+}
+.header__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo{
+  color: white;
+}
+.theme-dark {
+  background: rgb(1, 1, 15);
+  color: rgb(0, 0, 0);
+}
+.theme {
+  background: #ffffff;
+  border-radius: 30px;
+  color: #212121;
+  padding: 5px 3px;
+  margin: 0 20px 0 0;
+  cursor: pointer;
+}
+.theme-light {
+  background: white;
+  color: black;
+}
+ ul{
+  display: flex;
+  justify-content: flex-end;
+ }
+ ul li>*{
+  color: #ffffff;
+  margin: 0 10px 0 10px;
+ }
+}
+.theme-button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    display: inline-block;
+    padding: 10px 25px;
+    cursor: pointer;
+}
+@media screen and (max-width: 740px) {
+  .theme-dark {
+    background: rgb(1, 1, 15);
+    color: rgb(0, 0, 0);
+  }
+  .theme {
+    background: #ffffff;
+    border-radius: 30px;
+    color: #212121;
+    padding: 5px 3px;
+    margin: 0 20px 0 0;
+    cursor: pointer;
+  }
+  .theme-light {
+    background: white;
+    color: black;
+  }
+  .header{
+    top: 0;
+    width: 100%; 
+  padding: 9px 0;
+  background-color: #0c0915f3;
+}
+.header__logo{
+  color: white;
+}
+    .container{
+        width: 80%;
+    }          
+    [for=burger]{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        width: 30px;
+        text-align: center;
+        right: 20px;
+        top: 10px;
+    }
+    [for=burger]::before{
+      color: #d3d3d39a;
+        content: '☰';
+    }
+    nav{
+      border-radius: 20px;
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        margin-top: 30px;
+        background: rgba(46, 46, 46, 0.849);
+        width: 40%;
+        user-select: none;
+    }
+    nav ul {
+        margin: 0 0 10px 0;
+        padding: 10px;
+        list-style-type: none;
+    }
+    nav ul li a{
+      color: #ededed;
+    }
+    nav ul>*:not(:last-child){
+margin: 10px;
+    }
+    #burger:checked + label + nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        animation: show .5s ease;
+    }
+    #burger:checked +[for=burger]::before{
+        content: '⮾';
+    }
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/* ===================================Главный контент================================================== */
+
+.main {
+    padding: 100px 0;
+}
+.white__blocks {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 15px;
+    text-align: justify;
+}
+.withbackground__blocks {
+    padding: 15px;
+    display: flex;
+    text-align: justify;
+    align-items: flex-end;
+    flex-direction: column;
+    border-radius: 30px;
+    background: url(../img/bgcosmos.png);
+    background-size: cover;
+}
+.main__container_zodiak-white {
+    border-radius: 30px;
+    max-width: 600px;
+    background: #F5F5F5;
+    margin: 20px 0;
+    padding: 20px 22px;
+    box-shadow: 3px 3px 3px 0 rgba(255, 255, 255, 0.784);
+}
+
+/* =============Подвал====================== */
+.footer{
+    padding: 50px 0;
+    background: url(../img/bgcosmos.png);
+  }
+  .footer__container {
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+  .footer__container>*{
+    padding: 10px 20px;
+  }
+  .footer__container_developer {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #ffffff;
+  }
+  .footer__container_contacts {
+  }
+  .footer__container_contacts>*{
+    margin: 0 10px;
+    color: #ffffff;
+  }
+  .footer__container_contacts>*:not(:last-child){
+    margin: 0 10px;
+  }
+  .footer_vioastro{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    font-weight: 700;
+    text-align: center;
+    color: transparent;    
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, red, fuchsia);
+  }
+  
+  @media (max-width: 400px) {
+    .footer__container_contacts{
+  display: grid;
+  align-items: center;
+  text-align: center;
+    }
+    .footer__container_contacts>*{
+      margin: 10px 0;
+    }
+  } 

@@ -1,0 +1,275 @@
+*,
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  border:  0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+}
+ul,
+ol,
+li{
+  list-style: none;
+  color: #ffffff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  font-weight: inherit;
+  font-size: inherit;
+}
+html,
+body{
+  height: 100%;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 14px;
+font-family: Montserrat;
+}
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+._container{
+  max-width: 1170px;
+  margin: 0px auto;
+  padding: 0 20px;
+  box-sizing: content-box;
+  }
+._containerH{
+  max-width: 970px;
+  margin: 0px auto;
+  padding: 0 20px;
+  box-sizing: content-box;
+  }
+  /* ==========================меню============================== */
+  #burger, [for=burger]{
+    display: none;
+}
+@media screen and (min-width: 740px){
+  .header{
+    position: fixed;
+    top: 0;
+    width: 100%; 
+  padding: 20px 0;
+  background-color: #0c0915cb;
+  transition: 2s ease;
+  z-index: 111;
+}
+.header:hover{
+  background-color: #0c09151c;
+}
+.header__container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__logo{
+  color: white;
+}
+ ul{
+  display: flex;
+  justify-content: flex-end;
+ }
+ ul li>*{
+  color: #ffffff;
+  margin: 0 10px ;
+ }
+}
+@media screen and (max-width: 740px) {
+  .header{
+    z-index: 111;
+    top: 0;
+    width: 100%; 
+  padding: 9px 0;
+  background-color: #0c0915f3;
+}
+.header__logo{
+  color: white;
+}
+    .container{
+        width: 80%;
+    }          
+    [for=burger]{
+        display: block;
+        position: fixed;
+        width: 30px;
+        text-align: center;
+        right: 20px;
+        top: 10px;
+    }
+    [for=burger]::before{
+      color: #c5c5c59a;
+        content: '☰';
+    }
+    nav{
+        display: none;
+        border-radius: 20px;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        margin-top: 30px;
+        background: rgba(53, 53, 53, 0.751);
+        width: 40%;
+        user-select: none;
+    }
+    nav ul {
+        margin: 0 0 10px 0;
+        padding: 10px;
+        list-style-type: none;
+    }
+    nav ul li a{
+      color: #f3f3f3;
+    }
+    nav ul>*:not(:last-child){
+margin: 10px;
+    }
+    #burger:checked + label + nav{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        animation: show .5s ease;
+    }
+    #burger:checked +[for=burger]::before{
+        content: '⮾';
+    }
+}
+@keyframes show {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* ================главная===================== */
+.main{
+    padding: 100px 0;
+    background: url(../img/bgcosmos.png);
+    background-size: cover;
+    position: relative;
+}
+.main::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 2;
+}
+.main__container {
+    text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.main__container>*{
+    padding: 20px;
+    z-index: 300;
+}
+.main__container_text>* {
+    padding: 0 0 10px 0;
+}
+.text__title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+}
+.text__subtitle {
+    color: #fff;
+}
+.main__container_calendar{
+    border: 3px solid #ffffff;
+    color: #fff;
+}
+.days-of-week-container,
+.calendar-container {
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  text-align: center;
+}
+strong{
+    font-size: 18px;
+    color: #a600cb;
+}
+@media  (min-width: 800px) {
+    .main__container {
+        display: flex;
+        justify-content: space-between;
+    }
+.days-of-week-container,
+.calendar-container {
+  display: grid;
+  grid-template-columns: repeat(7, 50px);
+  text-align: center;
+  font-size: 24px;
+padding: 20px;
+}
+.calendar-container>*{
+    margin: 10px 0;
+}
+strong{
+    font-size: 30px;
+    color: #a600cb;
+}
+}
+/* ============подвал============ */
+.footer{
+    padding: 50px 0;
+  }
+  .footer__container {
+    display: flex;
+    align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  }
+  .footer__container>*{
+    padding: 10px 20px;
+  }
+  .footer__container_developer {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .footer__container_contacts>*{
+    margin: 0 10px;
+    color: #000;
+  }
+  .footer__container_contacts>*:not(:last-child){
+    margin: 0 10px;
+  }
+  .footer_vioastro{
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+    font-weight: 700;
+    text-align: center;
+    color: transparent;    
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-image: linear-gradient(to bottom, red, fuchsia);
+  }
+  
+  @media (max-width: 400px) {
+    .footer__container_contacts{
+  display: grid;
+  align-items: center;
+  text-align: center;
+    }
+    .footer__container_contacts>*{
+      margin: 10px 0;
+    }
+  } 
